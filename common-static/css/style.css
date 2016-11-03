@@ -1,0 +1,75 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+div#pageContainer {
+    position: relative;
+    margin: 0 auto;
+    height: auto !important;
+    height: 100%;
+    min-height: 100%;
+}
+#top-navbar {
+    padding: 5px 10px;
+}
+#nav-icon {
+    font-size: 2.5rem;
+}
+a.brand-logo, .side-nav a {
+   font-family: 'Special Elite', cursive;
+   color: #000000;
+}
+.side-nav a#logo-container {
+    font-size: 3em;
+    margin-top: 50px;
+}
+li.search {
+    left: 0;
+    right: 0;
+    top: 120px;
+    margin-top: 1px;
+    padding: 1px 0 0 0;
+    z-index: 2;
+}
+/*li.search .search-wrapper {
+    margin: 0 12px;
+}*/
+main {
+    font-family: 'Merriweather', serif;
+    padding-bottom: 100px;
+}
+h1.header {
+    font-family: 'Special Elite', cursive;
+}
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+footer.page-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+@media screen and (min-width: 993px) {
+    main, footer {
+        padding-left:250px;
+    }
+    .side-nav {
+        width: 250px;
+    }
+    h1.header {
+        font-family: 'Merriweather', serif;
+    }
+}

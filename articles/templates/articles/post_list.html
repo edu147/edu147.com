@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}articles{% endblock %}
+
+{% block content %}
+
+{% if categories %}
+    <h3>Article Categories</h3>
+    <ul>
+        {% for category in categories %}
+            <li><a href="#{{category.slug}}">{{category.title}}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if posts %}
+    <h3>Article Posts</h3>
+    <ul>
+        {% for post in posts %}
+            <li><a href="#{{post.slug}}">{{post.title}}</a><br>{{post.excerpt}}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% endblock %}
