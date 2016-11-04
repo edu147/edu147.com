@@ -1,0 +1,46 @@
+<h4>Converting from Binary to Decimal</h4>
+<p>Use this converter to check your work and gain a better understanding of how the conversion takes place.</p>
+<p class="mobl-hint"><i>Note: If using a mobile device, trying using a landscape screen orientation for a better display.</i></p>
+<form name="bit-counter" data-request="onBinToDec" data-request-update="calcresult: '#decresult'">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col s12">
+            <div class="col s3 bit">
+
+            {% for 15 %}
+
+            </div>
+            <div class="col s3 bit">
+                <div class="col s3 input-field bit">
+                    <p id="bit-{{ i }}" class="single-bit">0</p>
+                    <div class="row">
+                        <input class="filled-in bit-calc" type="checkbox" id="cb-{{ i }}" name="cb[]" value="{{ i }}" onclick="changeBit(this)"/><label for="cb-{{ i }}"></label>
+                    </div>
+                </div>
+
+                {# <!--<div class="col s3 input-field bit">-->
+                    <!--<p id="bit-{{ i }}" class="single-bit">0</p>-->
+                    <!--<div class="row">-->
+                        <!--<input class="filled-in bit-calc" type="checkbox" id="cb-{{ i }}" name="cb[]" value="{{ i }}" onclick="changeBit(this)"/><label for="cb-{{ i }}"></label>-->
+                    <!--</div>-->
+                <!--</div>--> #}
+
+            {% endfor %}
+
+            {% lorem 3 p %}
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col m4">
+            <button class="waves-effect btn-flat" type="submit" name="Calculate" value="Calculate">Calculate</button>
+        </div>
+        <div class="col m4">
+            <!--<div id="decresult"></div>-->
+        </div>
+        <div class="col m4">
+            <button class="waves-effect btn-flat" onclick="clearCb()">Reset</button>
+        </div>
+    </div>
+</form>
