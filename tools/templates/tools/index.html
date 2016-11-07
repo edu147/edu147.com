@@ -7,3 +7,8 @@
 {% include 'tools/numberconverter/binary/todecimal.html' %}
 
 {% endblock %}
+
+{% block javascript %}
+{% load static %}
+    <script src="{% static '/js/tools/numconverter.js' %}"></script>
+{% endblock %}

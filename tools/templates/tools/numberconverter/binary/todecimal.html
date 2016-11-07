@@ -1,33 +1,37 @@
 <h4>Converting from Binary to Decimal</h4>
 <p>Use this converter to check your work and gain a better understanding of how the conversion takes place.</p>
 <p class="mobl-hint"><i>Note: If using a mobile device, trying using a landscape screen orientation for a better display.</i></p>
-<form name="bit-counter" data-request="onBinToDec" data-request-update="calcresult: '#decresult'">
+<form name="bit-counter" >
     {% csrf_token %}
     <div class="row">
         <div class="col s12">
             <div class="col s3 bit">
 
-            {% for 15 %}
+            {% for i in num %}
+
+            {% if i|divisibleby:4 and forloop.first is not True %}
 
             </div>
             <div class="col s3 bit">
                 <div class="col s3 input-field bit">
-                    <p id="bit-{{ i }}" class="single-bit">0</p>
+                    <p id="bit-{{ forloop.revcounter0 }}" class="single-bit">0</p>
                     <div class="row">
-                        <input class="filled-in bit-calc" type="checkbox" id="cb-{{ i }}" name="cb[]" value="{{ i }}" onclick="changeBit(this)"/><label for="cb-{{ i }}"></label>
+                        <input class="filled-in bit-calc" type="checkbox" id="cb-{{ forloop.revcounter0 }}" name="cb[]" value="{{ forloop.revcounter0 }}" onclick="changeBit(this)"/><label for="cb-{{ forloop.revcounter0 }}"></label>
                     </div>
                 </div>
 
-                {# <!--<div class="col s3 input-field bit">-->
-                    <!--<p id="bit-{{ i }}" class="single-bit">0</p>-->
-                    <!--<div class="row">-->
-                        <!--<input class="filled-in bit-calc" type="checkbox" id="cb-{{ i }}" name="cb[]" value="{{ i }}" onclick="changeBit(this)"/><label for="cb-{{ i }}"></label>-->
-                    <!--</div>-->
-                <!--</div>--> #}
+            {% else %}
+
+                <div class="col s3 input-field bit">
+                    <p id="bit-{{ forloop.revcounter0 }}" class="single-bit">0</p>
+                    <div class="row">
+                        <input class="filled-in bit-calc" type="checkbox" id="cb-{{ forloop.revcounter0 }}" name="cb[]" value="{{ forloop.revcounter0 }}" onclick="changeBit(this)"/><label for="cb-{{ forloop.revcounter0 }}"></label>
+                    </div>
+                </div>
+
+            {% endif %}
 
             {% endfor %}
-
-            {% lorem 3 p %}
 
             </div>
         </div>
@@ -43,4 +47,5 @@
             <button class="waves-effect btn-flat" onclick="clearCb()">Reset</button>
         </div>
     </div>
+    <div class="row">{% lorem 3 p %}</div>
 </form>
